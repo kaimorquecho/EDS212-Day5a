@@ -63,11 +63,23 @@ ggplot(data = starwars, aes(x = height, y = mass)) +
 - update your code chuck options so that only your code and output graph appear in the rendered doc (no warninigs or messages)
 
 ```{r}
-
+#| fig-cap: 'This is my figure caption'
+#| fig-alt: a
 #| warning: false
 ggplot(data = starwars, aes(y = height)) +
          geom_histogram(color = 'orange', fill = 'purple') +
-  labs(x = 'character', y = 'height (cm)', title = 'idk' )
-
+  labs(x = 'count', y = 'height (cm)', title = 'idk' )
 ```
+
+df$col_name('height')
+zz
+```{r}
+
+mean(starwars$height, no.rm = FALSE)
+                                                                      
+sw_height_mean <- mean(starwars$height, no.rm = TRUE)
+
+sw_height_median <- median(starwars$height, na.rm = TRUE)
+sw_height_var <- var(starwars$height, na.rm = TRUE)
+sw_height_sd <- sd(starwars$height, na.rm = TRUE)                                          
 
