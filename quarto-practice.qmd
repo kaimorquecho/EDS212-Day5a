@@ -1,0 +1,73 @@
+---
+title: "eds212-day5a-interactive"
+format: html
+execute: 
+  warning: false
+editor options:
+  chunk_output_type: false
+---
+```{r}
+#| warning: false
+#| 
+
+# load libraries
+library(tidyverse)
+
+```
+
+Try using 'head()', 'tail()', and 'dim()'
+
+
+```{r}
+#| include: false 
+# the code chunk can be omittted with the hash pipe above, these are called execution options ----  
+# do some data exploration on the starwars df ----
+
+head(starwars)
+head(starwars, n= 50)
+
+# the 'n' stands for amount of rows you want to see ----
+tail(starwars)
+dim(starwars)
+dplyr::starwars
+
+```
+
+
+- Create a ggplot (scatterplot) of character mass (y-axis) and height (x-axis)
+- update the color of the points so that color changes based on the value of mass
+
+```{r}
+#| warning: false
+#| echo: false
+
+
+
+
+ggplot(data = starwars, aes(x = height, y = mass, color = mass)) +
+         geom_point() +
+  labs(x = "Height (cm)", 
+       y = "Mass (kg)", tittle = "here is my title")
+
+# labs is = labels
+
+# if you dont want to make color based on mass, you can set the color in  the geom_point layer
+
+ggplot(data = starwars, aes(x = height, y = mass)) +
+         geom_point(color = 'red')
+```
+
+- create a histogram of character heights 
+- update the fill color to purple and the outside border line of each histogram bin to orange
+- update axis labels
+- update your code chuck options so that only your code and output graph appear in the rendered doc (no warninigs or messages)
+
+```{r}
+
+#| warning: false
+ggplot(data = starwars, aes(y = height)) +
+         geom_histogram(color = 'orange', fill = 'purple') +
+  labs(x = 'character', y = 'height (cm)', title = 'idk' )
+
+```
+
